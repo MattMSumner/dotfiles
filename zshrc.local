@@ -18,17 +18,6 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle -e ':completion:*:default' list-colors \
   'reply=("${PREFIX:+=(#bi)($PREFIX:t)()*==34=34}:${(s.:.)LS_COLORS}")'
 
-# Git
-g() {
-  if [[ $# > 0 ]]; then
-    git $@
-  else
-    git status
-  fi
-}
-
-compdef g=git
-
 # Vim like history search
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
