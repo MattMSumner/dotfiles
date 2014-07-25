@@ -1,3 +1,4 @@
 alias gp='git push --all origin'
-alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
-alias zshrc="vim ~/.zshrc.local && reload"
+alias reload='. ~/.zshrc && echo "ZSH config reloaded from ~/.zshrc"'
+alias zshrc='vim ~/.zshrc.local && reload'
+alias be='bundle exec'
