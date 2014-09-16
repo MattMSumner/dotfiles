@@ -53,8 +53,6 @@ function! ToggleNumber()
   endif
 endfunction
 
-colorscheme base16-bright
-
 " Sets airline (status bar) to remove angle brackets and sets a theme
 let g:airline_left_sep=''
 let g:airline_right_sep=''

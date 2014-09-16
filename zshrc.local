@@ -1,4 +1,4 @@
-source /Users/matthewsumner/.rbenv/versions/2.1.0/lib/ruby/gems/2.1.0/gems/tmuxinator-0.6.6/completion/tmuxinator.zsh
+source /Users/matthewsumner/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/tmuxinator-0.6.8/completion/tmuxinator.zsh
 
 # history settings
 HISTFILE=$HOME/.zsh_history

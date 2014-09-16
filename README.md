@@ -5,28 +5,19 @@ I use [thoughtbot/dotfiles](https://github.com/thoughtbot/dotfiles) and
 MattMSumner/dotfiles together using the `*.local` convention described in
 thoughtbot/dotfiles.
 
-Requirements
-------------
-
-Set zsh as your login shell.
-
-    chsh -s /bin/zsh
-
-Install [rcm](https://github.com/mike-burns/rcm).
-
-    brew tap mike-burns/rcm
-    brew install rcm
-
 Install
 -------
 
 Clone onto your laptop:
 
-    git clone git://github.com/MattMSumner/dotfiles.git
+    cd ~
+    git clone git://github.com/thoughtbot/dotfiles.git
+    git clone git://github.com/MattMSumner/dotfiles.git dotfiles-local
 
 Install:
 
-    rcup -d dotfiles -x README.md
+    brew bundle dotfiles/Brewfile
+    env RCRC=$HOME/dotfiles/rcrc rcup
 
 This will create symlinks for config files in your home directory.
 
