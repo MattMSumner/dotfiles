@@ -1,9 +1,11 @@
 [alias]
   l = log --pretty=colored
+  lg = log --oneline --decorate --all --graph
   cb = checkout -b
   db = branch -d
   d  = diff
   ds = diff --staged
+  s = status -s
   fuckit = !sh -c 'git add --all && git reset --hard'
 
 [pretty]
@@ -15,3 +17,9 @@
 
 [github]
   user = MattMSumner
+
+[pull]
+  rebase = true
+
+[rerere]
+  enabled = true
