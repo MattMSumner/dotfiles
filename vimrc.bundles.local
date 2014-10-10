@@ -1,5 +1,4 @@
 Bundle 'jgdavey/tslime.vim'
-Bundle 'DataWraith/auto_mkdir'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'justinmk/vim-sneak'
 Bundle 'majutsushi/tagbar'

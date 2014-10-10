@@ -1,5 +1,8 @@
 source /Users/matthewsumner/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/tmuxinator-0.6.8/completion/tmuxinator.zsh
 
+# vim as editor
+export EDITOR=/usr/local/bin/vim
+
 # history settings
 HISTFILE=$HOME/.zsh_history
 
@@ -10,6 +13,12 @@ unsetopt correct_all
 export MAGICK_HOME="/usr/local/Cellar/imagemagick/6.8.7-7"
 export PATH=$MAGIC_HOME/bin:$PATH
 export LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+$LD_LIBRARY_PATH:}$MAGICK_HOME/lib"
+
+# Set usr/local/bin first
+export PATH=/usr/local/bin:$PATH
+
+# Setup rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Case insensitive autocomplete
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
