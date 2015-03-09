@@ -66,3 +66,6 @@ set scrolloff=5
 
 " Never wrap
 set nowrap
+
+" remove all comments
+nmap <leader>c :%s/^\s*#.*$//g<CR>:%s/\(\n\)\n\+/\1/g<CR>:nohl<CR>gg
