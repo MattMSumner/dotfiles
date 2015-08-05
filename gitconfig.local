@@ -6,7 +6,10 @@
   d  = diff
   ds = diff --staged
   s = status -s
+  ca = commit --amend
   fuckit = !sh -c 'git add --all && git reset --hard'
+  branch-name = "!git rev-parse --abbrev-ref HEAD"
+  shipit = "!f() { local BRANCH=$(git branch-name) && git co master && git merge $BRANCH && git push && git push origin :$BRANCH && git db $BRANCH; }; f"
 
 [pretty]
   colored = format:%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
