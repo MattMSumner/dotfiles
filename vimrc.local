@@ -77,3 +77,6 @@ highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
 " Default to relative line numbers
 set relativenumber
+
+" ES6 highlighting
+autocmd BufRead,BufNewFile *.es6 setfiletype javascript
