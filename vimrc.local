@@ -63,6 +63,10 @@ set cursorline
 
 " Always have spaces above and below window
 set scrolloff=5
+set winwidth=84
+set winheight=10
+set winminheight=10
+set winheight=999
 
 " Never wrap
 set nowrap
