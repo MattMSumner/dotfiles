@@ -1,7 +1,7 @@
+UnPlug 'syntastic'
 Plug 'jgdavey/tslime.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'majutsushi/tagbar'
-Plug 'bling/vim-airline'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
@@ -12,3 +12,23 @@ Plug 'tpope/vim-unimpaired'
 Plug 'croaky/vim-colors-github'
 Plug 'elixir-lang/vim-elixir'
 Plug 'elmcast/elm-vim'
+Plug 'w0rp/ale'
+
+let g:syntastic_mode_map = { 'mode': 'passive' }
+
+let g:ale_linters = {
+      \ 'javascript': ['eslint']
+      \ }
+
+nmap <silent> [r <Plug>(ale_previous_wrap)
+nmap <silent> ]r <Plug>(ale_next_wrap)
+
+" Linting on all changes felt too aggressive. The below settings calls lint on
+" certain events, either when I stop interacting or when entering / leaving
+" insert mode
+set updatetime=1000
+autocmd CursorHold * call ale#Lint()
+autocmd CursorHoldI * call ale#Lint()
+autocmd InsertLeave * call ale#Lint()
+autocmd TextChanged * call ale#Lint()
+let g:ale_lint_on_text_changed = 0
