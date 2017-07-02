@@ -22,7 +22,7 @@ map <Leader>n :call RenameFile()<cr>
 set list listchars=tab:»·,trail:·
 
 " Send specs away
-let g:rspec_command = 'call Send_to_Tmux("be rspec {spec}\n")'
+let g:test#strategy = 'tslime'
 
 " tell me off for lines more then 80
 set colorcolumn=80
@@ -33,9 +33,6 @@ autocmd FileType erb let b:surround_61 = "<%= \r %>"
 
 " pry
 map <Leader>p Obinding.pry<Esc><CR>
-
-" escape insert mode quickly
-imap jj <Esc>
 
 " Vim and OS share clipboard
 if exists("+clipboard")
@@ -84,3 +81,11 @@ set relativenumber
 
 " ES6 highlighting
 autocmd BufRead,BufNewFile *.es6 setfiletype javascript
+
+nmap <Leader>f :Autoformat<CR>
+
+let g:formatdef_scalafmt = "'scalafmt --stdin'"
+let g:formatters_scala = ['scalafmt']
+let g:autoformat_autoindent = 0
+let g:autoformat_retab = 0
+let g:autoformat_remove_trailing_spaces = 0
