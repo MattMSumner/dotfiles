@@ -13,3 +13,7 @@ bind -n C-\ run "(tmux display-message -p '#{pane_current_command}' | grep -iqE 
 
 # No escape time!
 set -sg escape-time 0
+
+# reattach-to-user-namespace
+set -g default-shell $SHELL
+set -g default-command "reattach-to-user-namespace -l ${SHELL}"
