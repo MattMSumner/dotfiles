@@ -13,6 +13,8 @@ Plug 'croaky/vim-colors-github'
 Plug 'elixir-lang/vim-elixir'
 Plug 'elmcast/elm-vim'
 Plug 'w0rp/ale'
+Plug 'Chiel92/vim-autoformat'
+Plug 'derekwyatt/vim-scala'
 
 let g:syntastic_mode_map = { 'mode': 'passive' }
 
