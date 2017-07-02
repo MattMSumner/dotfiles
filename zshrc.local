@@ -35,3 +35,11 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 
 # added by travis gem
 [ -f /Users/matthewsumner/.travis/travis.sh ] && source /Users/matthewsumner/.travis/travis.sh
+
+# Secrets
+[[ -f ~/.zshrc.secret ]] && source ~/.zshrc.secret
+
+# Scala
+export SCALA_HOME="/usr/local/opt/scala/idea"
+export PATH=$PATH:$SCALA_HOME/bin
+export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
