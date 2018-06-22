@@ -43,3 +43,12 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 export SCALA_HOME="/usr/local/opt/scala/idea"
 export PATH=$PATH:$SCALA_HOME/bin
 export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+
+export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
+
+source /usr/local/opt/asdf/asdf.sh
+source /usr/local/etc/bash_completion.d
+
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^x^e" edit-command-line
