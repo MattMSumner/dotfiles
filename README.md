@@ -16,7 +16,6 @@ Clone onto your laptop:
 
 Install:
 
-    brew bundle dotfiles/Brewfile
     env RCRC=$HOME/dotfiles/rcrc rcup
 
 This will create symlinks for config files in your home directory.
