@@ -15,9 +15,6 @@ export LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+$LD_LIBRARY_PATH:}$MAGICK_HOME/lib"
 # Set usr/local/bin first
 export PATH=/usr/local/bin:$PATH
 
-# Setup rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
 # Case insensitive autocomplete
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
@@ -44,11 +41,17 @@ export SCALA_HOME="/usr/local/opt/scala/idea"
 export PATH=$PATH:$SCALA_HOME/bin
 export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 
-export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
-
 source /usr/local/opt/asdf/asdf.sh
 source /usr/local/etc/bash_completion.d
 
 autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^x^e" edit-command-line
+
+export PATH=/Users/matthewsumner/.asdf/installs/elixir/1.7-otp-21/.mix/:$PATH
+
+export GPG_TTY=$(tty)
+
+# never husky
+export HUSKY_SKIP_HOOKS=1
+export HUSKY_SKIP_INSTALL=1
