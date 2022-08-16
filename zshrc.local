@@ -30,28 +30,8 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 
-# added by travis gem
-[ -f /Users/matthewsumner/.travis/travis.sh ] && source /Users/matthewsumner/.travis/travis.sh
-
-# Secrets
-[[ -f ~/.zshrc.secret ]] && source ~/.zshrc.secret
-
-# Scala
-export SCALA_HOME="/usr/local/opt/scala/idea"
-export PATH=$PATH:$SCALA_HOME/bin
-export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
-
-source /usr/local/opt/asdf/asdf.sh
-source /usr/local/etc/bash_completion.d
-
-autoload -z edit-command-line
-zle -N edit-command-line
-bindkey "^x^e" edit-command-line
-
-export PATH=/Users/matthewsumner/.asdf/installs/elixir/1.7-otp-21/.mix/:$PATH
-
-export GPG_TTY=$(tty)
-
 # never husky
 export HUSKY_SKIP_HOOKS=1
 export HUSKY_SKIP_INSTALL=1
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

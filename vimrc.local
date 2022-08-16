@@ -72,37 +72,22 @@ set relativenumber
 " ES6 highlighting
 autocmd BufRead,BufNewFile *.es6 setfiletype javascript
 
-nmap <Leader>f :Autoformat<CR>
-nmap <Leader>] :ALEGoToDefinition<CR>
-nmap <Leader>} :ALEFindReferences<CR>
 
 let g:formatdef_scalafmt = "'scalafmt --stdin'"
 let g:formatters_scala = ['scalafmt']
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 0
-let g:mix_format_on_save = 1
 let g:syntastic_mode_map = { 'mode': 'passive' }
 let g:jsx_ext_required = 0
-let g:ale_linters = {
-      \ 'typescript': ['tsserver', 'eslint'],
-      \ 'javascript': ['eslint'],
-      \ 'ruby': ['standardrb']
-      \ }
-let g:ale_fixers = {'ruby': ['standardrb']}
-
-set omnifunc=ale#completion#OmniFunc
 
 " Linting on all changes felt too aggressive. The below settings calls lint on
 " certain events, either when I stop interacting or when entering / leaving
 " insert mode
 set updatetime=1000
-let g:ale_fix_on_save = 1
 
-let g:elm_format_autosave = 1
-
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md PrettierAsync
+" disable ale augroup from thoughtbot dotfiles
+autocmd! ale
 
 inoremap <silent><expr> <c-space> coc#refresh()
 
@@ -113,6 +98,14 @@ function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
   else
-    call CocAction('doHover')
+    call CocActionAsync('doHover')
   endif
 endfunction
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+nmap <Leader>f :Ag --nogroup --nocolor --ignore test \\b<C-R><C-W>\\b<CR>:cw<CR>
