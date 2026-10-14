@@ -35,3 +35,6 @@ export HUSKY_SKIP_HOOKS=1
 export HUSKY_SKIP_INSTALL=1
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# mise: per-project tool versions (reads .ruby-version etc.)
+eval "$(mise activate zsh)"
