@@ -9,7 +9,8 @@
   ca = commit --amend
   fuckit = !sh -c 'git add --all && git reset --hard'
   branch-name = "!git rev-parse --abbrev-ref HEAD"
-  shipit = "!f() { local BRANCH=$(git branch-name) && git co master && git merge $BRANCH && git push && git push origin :$BRANCH && git db $BRANCH; }; f"
+  default-branch = "!f() { git rev-parse --verify --quiet refs/remotes/origin/HEAD >/dev/null || git remote set-head origin --auto >/dev/null; git symbolic-ref --short refs/remotes/origin/HEAD | sed 's@^origin/@@'; }; f"
+  shipit = "!f() { local BRANCH=$(git branch-name) && local DEFAULT=$(git default-branch) && git co $DEFAULT && git merge $BRANCH && git push && git push origin :$BRANCH && git db $BRANCH; }; f"
 
 [pretty]
   colored = format:%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
